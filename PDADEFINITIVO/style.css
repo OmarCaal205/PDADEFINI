@@ -1,0 +1,249 @@
+/* ====== MENÚ DE NAVEGACIÓN ====== */
+.navbar {
+  background-color: #004aad;
+  padding: 10px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li {
+  margin: 0 15px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+/* ====== CUERPO GENERAL ====== */
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: #f8fafc;
+  color: #222;
+  margin: 0;
+  text-align: center;
+}
+
+h1, h2, h3 {
+  color: #004aad;
+}
+
+section {
+  padding: 30px;
+  margin-top: 20px;
+}
+
+input {
+  padding: 10px;
+  width: 250px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #004aad;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #0073ff;
+}
+
+/* ====== SIMULADOR ====== */
+.input-area {
+  margin: 20px;
+}
+
+.output {
+  margin-top: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  display: inline-block;
+  text-align: left;
+  width: 80%;
+  max-width: 600px;
+}
+
+#pila {
+  border: 1px solid #ccc;
+  min-height: 120px;
+  width: 100px;
+  margin: 10px auto;
+  background: #eef2ff;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+/* ====== PILA ANIMADA ====== */
+.pila-item {
+  background: #004aad;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin: 4px 0;
+  font-weight: bold;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+}
+
+.pila-item.pila-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.pila-animada {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+}
+
+/* ====== TABLA TEÓRICA ====== */
+.tabla-teoria {
+  width: 80%;
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+
+.tabla-teoria th, .tabla-teoria td {
+  border: 1px solid #004aad;
+  padding: 8px;
+}
+
+.tabla-teoria th {
+  background-color: #004aad;
+  color: white;
+}
+
+/* ====== RESULTADOS ====== */
+.resultado-box {
+  transition: all 0.3s ease;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: bold;
+  white-space: pre-wrap;
+  text-align: left;
+}
+
+.resultado-box.exito {
+  background-color: #e8fbe8;
+  color: #065f08;
+  border: 2px solid #29a746;
+  box-shadow: 0 0 10px #b4f2b4;
+}
+
+.resultado-box.error {
+  background-color: #fff0f0;
+  color: #b30000;
+  border: 2px solid #ff4d4d;
+  box-shadow: 0 0 10px #ffb3b3;
+}
+
+/* ====== BOTONES EXTRA (pausa / limpiar) ====== */
+#btnPausa, #btnLimpiar {
+  margin-left: 8px;
+  background-color: #555;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-weight: bold;
+}
+
+#btnPausa:hover { background-color: #777; }
+
+#btnLimpiar {
+  background-color: #d11;
+}
+
+#btnLimpiar:hover {
+  background-color: #a00;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 768px) {
+  .navbar ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar li {
+    margin: 10px 0;
+  }
+
+  input {
+    width: 80%;
+    margin-bottom: 10px;
+  }
+
+  button {
+    width: 70%;
+    margin-bottom: 5px;
+  }
+
+  .output {
+    width: 90%;
+    padding: 10px;
+  }
+
+  #pila {
+    width: 80px;
+  }
+
+  .tabla-teoria {
+    width: 95%;
+    font-size: 14px;
+  }
+}
+.logo-container {
+  text-align: center;
+  margin-top: 20px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.logo {
+  width: 120px;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
